@@ -1,24 +1,22 @@
-require "pry"
+class Dog
 
- class Dog
+  attr_reader :name
 
-  attr_accessor :name
+  @@all = []
 
-     @@all = []
-
-   def initialize(name)
+  def initialize(name)
     @name = name
     @@all << self
   end
 
-  def self.clear_all
-   @@all.clear
- end
-
-   def self.all
+  def self.all
     @@all.map do |dog|
       puts dog.name
     end
   end
 
- end
+  def self.clear_all
+    @@all.clear
+  end
+
+end #end of Dog class
